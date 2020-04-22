@@ -20,11 +20,18 @@ export class ProductsService {
   private cargarProductos(){
     this.http.get('https://lezicavinosapiens-b2210.firebaseio.com/productos_idx.json')
     .subscribe( (resp : product[] )=> {
-      // this.producto = resp;
-      console.log(resp);
       this.product = resp;
       this.loading = false;
   });
   }
+
+  getProducto( id: string ){
+    return this.http.get(`https://lezicavinosapiens-b2210.firebaseio.com/productos/${ id }.json`);
+    
+
+  };
+  
+
+
 }
 

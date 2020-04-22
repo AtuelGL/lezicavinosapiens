@@ -24,7 +24,6 @@ private cargarInfo(){
         .subscribe( (resp : InfoPagina )=> {
               this.loaded = true;
               this.info = resp;
-              console.log(resp);
         });
 }
 
@@ -32,7 +31,6 @@ private cargarEquipo(){
         this.http.get('https://lezicavinosapiens-b2210.firebaseio.com/equipo.json')
         .subscribe( (resp : any[] )=> {
             this.equipo = resp;
-            console.log(resp);
         });
 }
 
